@@ -1,0 +1,88 @@
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.5in,top=0.5in,right=0.5in,bottom=0.5in]{geometry} % Document margins
+
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+
+\name{Ken Wang}
+
+\address{
+    Email: \href{mailto: kenuiuc@gmail.com}{kenuiuc@gmail.com} \\
+    Github: \href{http://github.com/kenuiuc}{github.com/kenuiuc} \\
+    Linkedin: \href{http://linkedin.com/in/kenuiuc}{linkedin.com/in/kenuiuc}
+}
+\address{
+    Phone: 778-999-5114 \\
+    Address: 5860 Goldeneye Pl, Richmond BC
+}
+
+\begin{document}
+
+\begin{skillSection}{Summary}
+\item Java developer with 2+ years experience and both Computer Science and Data Science degrees
+\item Familiar with Spring Cloud microservice apps and have basic skills in big data and machine learning
+\end{skillSection}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+{Java Development Training} \hfill {2024}
+
+{\bf University of British Columbia} \hfill {2022 - 2023}
+\\ Master of Data Science \hfill {\em{Grade 84/100}}
+
+{\bf University of Illinois at Urbana-Champaign} \hfill {2013 - 2017}
+\\ Bachelor of Computer Science \hfill {\em{Grade 3.6/4.0}}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Work Experience}
+
+\begin{rSubsection}
+{Easemob (Agora Company)} {2021 (6 months)} {Java Engineer} {Beijing China}
+\item Worked on a microservice-based SaaS Instant Messaging system built with Spring Cloud
+\item Implemented a prefix tree-based keyword detection service using Thrift RPC to block harmful messages
+\item Built a reactive Java SDK calling REST services with the Reactor Netty client
+\item Developed an envelope encryption library using AWS KMS to comply with GDPR
+\item Created a key-value store service with MySQL and Redis to store user metadata
+\end{rSubsection}
+
+\begin{rSubsection}
+{Datablau} {2020 - 2021 (5 months)} {Java Engineer} {Beijing China}
+\item Worked on a data governance tool to analyze metadata from databases like MySQL, Postgres and Oracle
+\item Implemented the data quality module, which scans DBs and validates data with user-defined rules
+\item Built REST APIs with Spring MVC to synchronize DB metadata with third-party systems
+\item Added comprehensive unit tests to existing modules using JUnit and Mockito
+\end{rSubsection}
+
+\begin{rSubsection}
+{ShopHitly} {2020 (5 months)} {Backend Engineer} {Taiyuan China}
+\item Worked on an early-stage E-commerce website, which sells cannabis hardware in Illinois US
+\item Built REST APIs from zero to one for the inventory and messaging systems using Node.js and MongoDB
+\item Set up CI/CD pipelines from zero to one with Docker, AWS ECS and CodePipeline.
+\end{rSubsection}
+
+\begin{rSubsection}
+{Yahoo} {2018 - 2019 (15 months)} {Data Engineer} {Champaign IL, USA}
+\item Worked on a low latency OLAP system for user engagement analysis
+\item Built ETL pipelines with Big Data technologies like Hadoop, Pig, Oozie and Hive
+\item Ingested data into Apache Druid to allow our analysts to query petabytes of data in seconds
+\end{rSubsection}
+
+\end{rSection}
+
+\begin{skillSection}{Skills}
+\item Java, Spring Boot, Spring Cloud, Hibernate, JUnit, Mockito, Maven, Tomcat
+\item MySQL, Postgres, Redis, Linux, Docker, AWS, Git, Hadoop, Node.js
+\item Python, NumPy, pandas, scikit-learn, PyTorch, SageMaker, Vega-Altair, Plotly
+\end{skillSection}
+
+\end{document}

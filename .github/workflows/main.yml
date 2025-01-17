@@ -5,9 +5,13 @@ on:
     branches: [ "master" ]
 
 jobs:
-  deploy:
-    name: latexmk-deploy
+  build_latex:
     runs-on: ubuntu-latest
     steps:
-    - name: latexmk-step
-      uses: reitermarkus/latexmk@v1.0.4
+      - uses: actions/checkout@v4
+      - uses: xu-cheng/texlive-action@v2
+        with:
+          scheme: full
+          run: |
+           latexmk -pdf -auxdir=/tmp/latexmk
+            

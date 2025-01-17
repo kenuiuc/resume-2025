@@ -1,2 +1,1 @@
-name: 'Run Latexmk'
 uses: reitermarkus/latexmk@v1.0.4

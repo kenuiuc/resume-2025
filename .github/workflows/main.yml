@@ -1,1 +1,13 @@
-uses: reitermarkus/latexmk@v1.0.4
+name: latexmk-workflow
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  deploy:
+    name: latexmk-deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: latexmk-step
+      uses: reitermarkus/latexmk@v1.0.4

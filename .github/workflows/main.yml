@@ -1,4 +1,4 @@
-name: latexmk-workflow
+name: compile-latex
 
 on:
   push:

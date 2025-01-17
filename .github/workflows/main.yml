@@ -14,3 +14,7 @@ jobs:
           docker_image: texlive/texlive
           run: |
            latexmk -pdf -auxdir=/tmp/latexmk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rendered-pdf
+          path: ken_wang_resume.pdf

@@ -1,0 +1,27 @@
+name: build-github-page 
+
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  build-latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: run-texlive
+        run: |
+          docker run -it --rm \
+            --name texlive-container \
+            -v "${PWD}:/workdir" \
+            -w "/workdir" \
+            texlive/texlive \
+            latexmk -pdf \
+              -outdir=docs \
+              -auxdir=/tmp/latexmk
+      - name: upload-artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: 'docs'

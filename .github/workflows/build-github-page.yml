@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v4
       - name: run-texlive
         run: |
-          docker run -it --rm \
+          docker run -i --rm \
             --name texlive-container \
             -v "${PWD}:/workdir" \
             -w "/workdir" \

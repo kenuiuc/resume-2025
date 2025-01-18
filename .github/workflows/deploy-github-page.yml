@@ -1,4 +1,4 @@
-name: deploy-github-page 
+name: deploy-github-page
 
 on:
   push:
@@ -23,31 +23,15 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-      - name: setup-pages 
+      - name: setup-pages
         uses: actions/configure-pages@v5
-      - name: cache-docker-image
-        id: cache-docker-image
-        uses: actions/cache@v3
-        with:
-          path: texlive-image
-          key: texlive-image-cache-key
-      - name: pull-docker-image
-        if: steps.cache-docker-image.outputs.cache-hit != 'true'
-        run: | 
-          docker pull texlive/texlive && \
-          mkdir -p texlive-image && \
-          docker image save texlive/texlive \
-            --output texlive-image/texlive.tar
-      - name: load-cached-docker-image
-        if: steps.cache-docker-image.outputs.cache-hit == 'true'
-        run: docker image load --input texlive-image/texlive.tar
-      - name: run-texlive
+      - name: run-latexmk
         run: |
           docker run -i --rm \
-            --name texlive-container \
+            --name latexmk-container \
             -v "${PWD}:/workdir" \
             -w "/workdir" \
-            texlive/texlive \
+            kenuiuc/ubuntu-latexmk \
             latexmk -pdf \
               -outdir=docs \
               -auxdir=/tmp/latexmk
@@ -55,6 +39,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'docs'
-      - name: deploy-github-pages 
+      - name: deploy-github-pages
         id: deployment
         uses: actions/deploy-pages@v4

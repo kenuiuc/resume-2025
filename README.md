@@ -1,12 +1,12 @@
 ### Build and Deployment
 
-#### 1. Render PDF locally with [texlive](https://hub.docker.com/r/texlive/texlive) docker container
+#### 1. Render PDF locally with [ubuntu-latexmk](https://hub.docker.com/r/kenuiuc/ubuntu-latexmk) docker container
 ```
 docker run -i --rm \
-  --name texlive-container \
+  --name latexmk-container \
   -v "${PWD}:/workdir" \
   -w "/workdir" \
-  texlive/texlive \
+  kenuiuc/ubuntu-latexmk \
   latexmk -pdf \
     -outdir=docs \
     -auxdir=/tmp/latexmk

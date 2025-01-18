@@ -1,16 +1,30 @@
-name: build-github-page 
+name: deploy-github-page 
 
 on:
   push:
     branches: [ "master" ]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  build-latex:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v4
+      - name: setup-pages 
+        uses: actions/configure-pages@v5
       - name: run-texlive
         run: |
           docker run -i --rm \
@@ -25,3 +39,6 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'docs'
+      - name: deploy-github-pages 
+        id: deployment
+        uses: actions/deploy-pages@v4

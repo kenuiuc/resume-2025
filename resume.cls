@@ -27,9 +27,7 @@
 
 % Ken hyperlinks
 \usepackage[
-    colorlinks = true,
-    linkcolor = blue,
-    urlcolor  = blue
+  hidelinks
 ]{hyperref}
 
 \pagestyle{empty} % Suppress page numbers

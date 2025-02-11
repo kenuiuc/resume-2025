@@ -52,7 +52,7 @@ Development in a Java-based RESTful web service for time series analytics with D
 
 ### Skills
 - **Proficient:** Java, Spring Boot, Spring Cloud, MySQL, Redis, Linux, Docker, Tomcat, Hibernate, Maven, Git
-- **Basic:** JavaScript, React, Node.js, Python, pandas, scikit-learn, PyTorch, AWS, Hadoop, Postgres
+- **Basic:** JavaScript, React, Node.js, HTML, CSS, Python, pandas, scikit-learn, PyTorch, AWS, Hadoop, Postgres
 
 ### Contacts
 ```
